@@ -1,0 +1,26 @@
+# Ignore all
+*
+
+# Whitelist markdown files
+!_index.md
+!index.md
+
+# Whitelist Git files
+!.gitignore
+!.gitattributes
+
+# Whitelist docs & licenses
+!LICENSE
+!README.md
+!CONTRIBUTING.md
+
+# Whitelist config files
+!.editorconfig
+
+# ========== Whitelist language codes ==========
+!en/
+!en/**
+!es/
+!es/**
+!fr/
+!fr/**

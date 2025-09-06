@@ -1,0 +1,15 @@
+{{- $parsed := urls.Parse .Destination -}}
+{{- $whitelist := slice "tabbedout.wiki" "www.tabbedout.wiki" -}}
+<a
+  {{ if $parsed.IsAbs }}
+    {{- if in $whitelist $parsed.Host -}}
+      href="{{ .Destination | safeURL }}"
+      rel="external"
+    {{- else -}}
+      href="#"
+      title="Blocked Link"
+    {{- end -}}
+  {{ else }}
+    href="{{ .Destination | relLangURL }}"
+  {{ end }}
+>{{ .Text | safeHTML }}</a>

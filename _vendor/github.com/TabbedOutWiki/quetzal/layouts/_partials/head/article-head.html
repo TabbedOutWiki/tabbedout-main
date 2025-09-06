@@ -1,0 +1,25 @@
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+{{ partialCached "head/required.html" . }}
+<meta name="description" content="{{ .Description }}">
+{{- if hugo.IsProduction -}}
+<meta name="google" content="sitelinkssearchbox">
+<meta name="robots" content="index, follow, max-image-preview:standard">
+{{- else -}}
+<meta name="robots" content="noindex">
+{{- end -}}
+<!-- Favicon here -->
+<meta property="og:title" content="{{ .Title }} - {{ .Site.Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Site.BaseURL }}{{ .RelPermalink }}">
+<meta property="og:image" content="">
+<meta property="og:image:secure_url" content="">
+<meta name="twitter:card" content="summary">
+{{ partialCached "head/critical.html" . }}
+{{ $style := resources.Get "css/global.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+{{ $themeswitchscript := resources.Get "js/theme-switch.js" | minify | fingerprint }}
+<script src="{{ $themeswitchscript.RelPermalink }}" integrity="{{ $themeswitchscript.Data.Integrity }}" defer></script>
+{{ if .Params.renderMath }}
+  {{ partialCached "js/math.html" . }}
+{{ end }}

@@ -1,0 +1,61 @@
+<div class="top-nav">
+  <nav aria-label="Breadcrumb">
+    <ol class="breadcrumb-list" aria-label="Breadcrumbs">
+        {{- range .Ancestors.Reverse }}
+          <li class="breadcrumb-item">
+            <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+            <!--<meta itemprop="position" content="">-->
+          </li>
+        {{- end }}
+        <li class="breadcrumb-item">
+          <a class="current" aria-current="page" href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+          <!--<meta itemprop="position" content="">-->
+        </li>
+    </ol>
+  </nav>
+  <div class="site-actions">
+    <button class="button frameless site-action-toggle" type="button" aria-label="{{ i18n "nav_page_actions" }}">
+      <span class="button-wrapper">
+        <span class="icon icon-ellipses"></span>
+        <span class="sr-only">{{ i18n "sr_main_menu_open" }}</span>
+      </span>
+    </button>
+    <ul class="site-action-list">
+      <li class="site-action">
+        {{ partialCached "components/search.html" . }}
+      </li>
+      <li class="site-action">
+        {{ partialCached "components/theme-switch.html" . }}
+      </li>
+      {{ if .IsTranslated }}
+      <li class="site-action">
+        {{ partial "components/language.html" . }}
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</div>
+<style>
+  .button .icon {
+    background-color: var(--tx1);
+    margin: 0 -1px;
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+  .icon.icon-ellipses {
+    mask-image: url('/icon/menu.svg');
+  }
+</style>

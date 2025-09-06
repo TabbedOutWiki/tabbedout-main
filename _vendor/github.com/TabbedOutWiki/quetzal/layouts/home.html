@@ -1,0 +1,80 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="shell category-standard">
+    <main class="main-content">
+      <div class="homepage">
+        <section class="hero">
+          <div class="logo"><kbd>Tabbed</kbd> <kbd>Out</kbd></div>
+          <p>{{ i18n "home_intro" }}</p>
+          {{ partialCached "components/autofocus-search.html" . }}
+          <div class="social-links"></div>
+        </section>
+        <section class="important-sections">
+          <div class="tile-container">
+            {{ range .Pages }}
+              {{ if .IsSection }}
+                <a class="img-tile" href='{{ .RelPermalink }}'>
+                  <img src="/placeholder/tile.svg" alt="{{ .LinkTitle }}" width="240" height="135">
+                  <div class="img-tile-text">{{ .LinkTitle }}</div>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </section>
+        <section>
+          {{ partial "components/recent-changes.html" . }}
+        </section>
+        <section class="featured-contributors"></section>
+      </div>
+    </main>
+  </div>
+</div>
+<style>
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: clip;
+    overflow-y: visible;
+    position: relative;
+    width: 100%;
+  }
+
+  .homepage section {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    width: 100%;
+    padding: 1rem var(--gutter);
+  }
+
+  .hero {
+    align-items: center;
+    text-align: center;
+  }
+
+  .tile-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 2rem;
+  }
+
+  .tile-container .img-tile {
+    position: relative;
+    outline: 1px solid #000;
+  }
+
+  .img-tile-text {
+    color: #fff;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-left: 5px;
+    background: linear-gradient(to right, #000 35%, transparent);
+  }
+</style>
+{{ end }}

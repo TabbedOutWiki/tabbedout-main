@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-wrapper">
+  <div class="shell category-article">
+    <main class="main-content">
+      <article class="content">
+        <div class="content-upper">
+          <header><h1 id="#content" class="content-title"><a href="#content">{{ .Title }}</a></h1></header>
+          <ul class="page-tools">
+            <li class="page-tool"><a class="button" href="https://github.com" target="_blank" rel="external">{{ i18n "edit" }}</a></li>
+          </ul>
+        </div>
+        <div class="content-body">
+          <div>
+            <h1>404 — {{ $.Site.Params.missingContentMessage | default "This page does not exist."}}</h1>
+            <p>Should it? Consider writing it!</p>
+            <p><a href="{{ "/" | absURL }}">{{ $.Site.Params.missingBackButtonLabel | default "Home page" }}&nbsp;→</a></p>
+          </div>
+        </div>
+      </article>
+    </main>
+  </div>
+</div>
+{{ end }}

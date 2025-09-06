@@ -16,6 +16,9 @@ taxonomies:
   category: 'categories'
   tag: 'tags'
 
+# Set and keep true after initial Git commit
+enableGitInfo: true
+
 # ========================== DO NOT TOUCH BELOW ==========================
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
@@ -33,8 +36,16 @@ outPutFormats:
 outputs:
   home:
     - 'html'
-    - 'rss'
+  section:
+    - 'html'
     - 'json'
+  taxonomy:
+    - 'html'
+  term:
+    - 'html'
+services:
+  rss:
+    limit: 42
 
 privacy:
   disqus:

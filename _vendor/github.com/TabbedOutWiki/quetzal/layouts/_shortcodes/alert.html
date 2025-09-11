@@ -1,0 +1,6 @@
+<div class="alert-container {{ .Get "type" }}">
+  <div class="alert-content">
+    <h3>{{- .Get "title" | safeHTML -}}</h3>
+    <p>{{- .Get "text" | safeHTML -}}</p>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+# General
+[wiki]
+one = "Wiki"
+other = "Wikis"
+
+[edit]
+other = "Edit"
+
+[toc]
+other = "Contents"
+
+[recent_changes]
+other = "Recent Changes"
+
+# Themes
+[theme_select]
+other = "Theme"
+
+[theme_text_system]
+other = "System default"
+
+[theme_text_light]
+other = "Light"
+
+[theme_text_dark]
+other = "Dark"
+
+# Common UI
+[ui_search]
+other = "Search"
+
+[ui_search_main_placeholder]
+other = "Search the wiki..."
+
+[ui_search_placeholder]
+other = "Type / to search"
+
+[ui_return_home]
+other = "Return home"
+
+# Homepage
+[home_intro]
+other = "The official homepage for all TabbedOut Wikis"
+
+# 404
+[404]
+other = "This page does not exist. Should it? Consider writing it."
+
+# Footer
+[privacy_policy]
+other = "Privacy Policy"
+
+[terms_of_use]
+other = "Terms of Use"
+
+[report_issue]
+other = "Report Issue"
+
+[guidelines]
+other = "Guidelines"
+
+[contact]
+other = "Contact Us"
+
+# Alt text
+[logo]
+other = "TabbedOut Logo"
+
+# Screen Reader
+[sr_theme_select]
+other = "Theme selector"
+
+[sr_language_select]
+other = "Language selector"
+
+[sr_main_menu_open]
+other = "Open main menu"

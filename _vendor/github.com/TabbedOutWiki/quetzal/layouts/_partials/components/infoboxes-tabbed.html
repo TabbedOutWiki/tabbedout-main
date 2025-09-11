@@ -1,0 +1,164 @@
+{{ $infoboxes := .Params.infoboxes }}
+{{ if $infoboxes }}
+<div class="infobox-container tabs">
+  <!-- Tabs -->
+  <div class="tabs-container" role="tablist">
+    {{ range $i, $element := $infoboxes }}
+      {{ if eq $i 0 }}
+        <button
+          id="tab-label-{{ $i }}"
+          class="tab-control frameless active"
+          type="button"
+          role="tab"
+          data-controls="tab-panel-{{ $i }}"
+          aria-controls="tab-panel-{{ $i }}"
+          aria-selected="true">
+          <span class="focus">{{ .tab | humanize }}</span>
+        </button>
+      {{ else }}
+        <button
+          id="tab-label-{{ $i }}"
+          class="tab-control frameless"
+          type="button"
+          role="tab"
+          data-controls="tab-panel-{{ $i }}"
+          aria-controls="tab-panel-{{ $i }}"
+          aria-selected="false"
+          tabindex="-1">
+          <span class="focus">{{ .tab | humanize }}</span>
+        </button>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  <!-- Infoboxes -->
+  {{ range $i, $element := $infoboxes }}
+    <aside id="tab-panel-{{ $i }}" data-panel="tab-panel-{{ $i }}" class="infobox {{ if gt $i 0 }}is-hidden{{ end }}" role="tabpanel" tabindex="0" aria-labelledby="tab-label-{{ $i }}">
+      <table>
+        <thead>
+          <tr>
+            <th class="infobox-title" colspan="100%">{{ .title | humanize }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range .data }}
+            <tr>
+              <th>{{ .label | humanize }}</th>
+              <td>{{ .value }}</td>
+            </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </aside>
+  {{ end }}
+</div>
+<style>
+  /* Tabs required */
+  .tabs .is-hidden {
+    display: none;
+  }
+
+  .tab-control span {
+    pointer-events: none;
+  }
+
+  /* Tab decoration */
+  .tabs {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tabs-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    width: 100%;
+  }
+
+  .tabs-container .tab-control {
+    font-size: var(--fxs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid var(--border-item);
+    padding: 0.25rem 0.5rem;
+  }
+
+  .tabs-container .tab-control:hover {
+    background: none;
+    border-color: var(--accent);
+  }
+
+  .tabs-container .tab-control.active {
+    border-color: var(--accent);
+  }
+
+  /* Infobox */
+  .infobox-container {
+    display: flex;
+    background: var(--bg-item);
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    
+    border: 1px solid var(--border-item);
+    max-width: 270px;
+  }
+
+  .infobox {
+    font-size: var(--fs);
+    width: 100%;
+  }
+
+  .infobox table {
+    width: 100%;
+  }
+
+  .infobox .infobox-title {
+    font-size: var(--f);
+    text-align: center;
+  }
+
+  .infobox tbody tr:last-child {
+    border-bottom: none;
+  }
+</style>
+<script>
+  const tabs = document.querySelectorAll('.tabs');
+  for (const tab of tabs) {
+    const tabContainer = tab.querySelector('.tabs-container');
+    const tabControls = tabContainer.querySelectorAll('button.tab-control');
+    const panels = tab.querySelectorAll('[data-panel]');
+
+    for (const tabControl of tabControls) {
+      const handleClick = (e) => {
+        e.stopPropagation();
+        const panelID = e.target.dataset.controls;
+
+        for (const panel of panels) {
+          if (panel.dataset.panel === panelID) {
+            panel.classList.remove('is-hidden');
+
+            // Accessibility
+            for (const btn of tabControls) {
+              if (btn.id === e.target.id) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+                btn.removeAttribute('tabindex');
+              } else {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+                btn.setAttribute('tabindex', '-1');
+              }
+            }
+          } else {
+            panel.classList.add('is-hidden');
+          }
+        }
+      }
+
+      tabControl.addEventListener('click', handleClick);
+    }
+  }
+</script>
+{{ end }}

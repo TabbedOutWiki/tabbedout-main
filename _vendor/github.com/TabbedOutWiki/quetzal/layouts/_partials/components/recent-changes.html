@@ -1,0 +1,13 @@
+{{ with .GitInfo }}
+<div class="recent-changes">
+  <h2>{{ i18n "recent_changes" }}</h2>
+  <ul class="feed">
+    {{ range .Ancestors | first 5 }} 
+      <li class="feed-item">
+        <a href="">{{ .Subject }}</a>
+        <span>{{ .CommitDate.Format "Jan 02 2006" }}</span>
+      </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

@@ -1,0 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--tx-primary);
+  background: var(--bg-primary);
+  accent-color: var(--accent);
+}
+
+/* Top nav */
+.top-nav {
+  background: var(--bg-navigation);
+}
+
+/* Article */
+.content {
+  background: var(--bg-content);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1px 0 var(--shadow);
+  padding: 1rem 1.5rem;
+}
+
+/* Sidebar */
+.sidebar a {
+  color: var(--tx-aside);
+}
+
+.sidebar a.current {
+  color: var(--tx-highlight);
+  background: var(--bg-highlight);
+}
+
+/* Table of Contents */
+.utils #TableOfContents > ul {
+  background-color: var(--bg-item);
+  border-color: var(--border-item);
+  border-style: solid;
+  border-radius: var(--border-radius);
+}
+
+.utils #TableOfContents ul li a {
+  color: var(--tx-aside);
+}
+
+.utils #TableOfContents ul ul {
+  border-color: var(--border-item);
+}
+
+/* Breadcrumbs */
+.breadcrumb-item a {
+  color: var(--tx-subtle);
+}
+
+/* Footer */
+.footer-wrapper {
+  font-size: var(--fxs);
+  background-color: var(--bg-footer);
+  padding: var(--gutter);
+}
+
+/* Section */
+.section-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.grid-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-item);
+  gap: 1rem;
+}
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

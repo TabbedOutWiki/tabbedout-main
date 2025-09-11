@@ -1,8 +1,0 @@
-{{- $css := resources.Get "css/critical.css" | minify | fingerprint -}}
-{{- with $css }}
-  <style>{{ .Content | safeCSS }}</style>
-{{- end }}
-{{- $js := resources.Get "js/critical.js" | minify | fingerprint -}}
-{{- with $js }}
-  <script>{{ .Content | safeJS }}</script>
-{{- end }}

@@ -1,0 +1,89 @@
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Text */
+  --tx-prominent: #f0f0f0;
+  --tx-primary: #eaeaea;
+  --tx-aside: #dadada;
+  --tx-subtle: #aaa;
+  --tx-placeholder: #999;
+  --tx-invert: #000;
+
+  /* Backgrounds */
+  --bg-navigation: var(--bg-primary);
+  --bg-primary: #121010;
+  --bg-content: #1a1818;
+  --bg-footer: var(--bg-navigation);
+
+  --bg-item: #232121;
+  --bg-interactive: #252323;
+  --bg-hover: #292727;
+  --bg-selected: #2c2a2a;
+
+  --bg-modal: #0a0a0a;
+  --bg-tooltip: #0f0f0f;
+
+  /* Darkest -> brightest */
+  --border-item: #363434;
+  --border-interactive: #3f3d3d;
+  --border-content: #626060;
+
+  --accent: #cc4d4d;
+  --shadow: #080808;
+
+  /* Shortcodes */
+  --border-alert-info: #2d5f6b;
+  --border-alert-warn: #723131;
+  --bg-alert-info: #2d5f6b11;
+  --bg-alert-warn: #72313111;
+
+  /* Accessories */
+  --tx-highlight: var(--tx-invert);
+  --bg-highlight: var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-theme="light dark"] {
+      color-scheme: dark;
+
+      /* Text */
+      --tx-prominent: #f0f0f0;
+      --tx-primary: #eaeaea;
+      --tx-aside: #dadada;
+      --tx-subtle: #aaa;
+      --tx-placeholder: #999;
+      --tx-invert: #000;
+
+      /* Backgrounds */
+      --bg-navigation: var(--bg-primary);
+      --bg-primary: #121010;
+      --bg-content: #1a1818;
+      --bg-footer: var(--bg-navigation);
+      
+      --bg-item: #232121;
+      --bg-interactive: #252323;
+      --bg-hover: #292727;
+      --bg-selected: #2c2a2a;
+
+      --bg-modal: #0a0a0a;
+      --bg-tooltip: #0f0f0f;
+
+      /* Darkest -> brightest */
+      --border-item: #363434;
+      --border-interactive: #3f3d3d;
+      --border-content: #626060;
+
+      --accent: #cc4d4d;
+      --shadow: #080808;
+
+      /* Shortcodes */
+      --border-alert-info: #2d5f6b;
+      --border-alert-warn: #723131;
+      --bg-alert-info: #2d5f6b11;
+      --bg-alert-warn: #72313111;
+
+      /* Accessories */
+      --tx-highlight: var(--tx-invert);
+      --bg-highlight: var(--accent);
+  }
+}

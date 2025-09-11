@@ -1,0 +1,240 @@
+/* Horizontal rule */
+hr {
+  border-color: var(--border-content);
+}
+
+/* Pre / code */
+code {
+  color: var(--tx-primary);
+  background-color: var(--bg-item);
+  border: 1px solid var(--border-item);
+  border-radius: var(--border-radius);
+}
+
+/* Keyboard */
+kbd {
+  color: #333;
+  background: #ddd;
+  border-style: solid;
+  border-color: #555;
+  box-shadow: 0 1px 1px #ccc inset, 0 3px 0 0 #999;
+  border-radius: var(--border-radius);
+}
+
+/* Quotes */
+blockquote {
+  border-left-style: solid;
+  border-left-color: var(--border-item);
+}
+
+blockquote::before {
+  color: var(--tx-subtle);
+}
+
+/* Details */
+details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+details[open] {
+  margin-bottom: 0.5rem;
+}
+
+details > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-item);
+  border-radius: var(--border-radius);
+  list-style: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+details > summary::after {
+  content: '+';
+  text-align: center;
+  width: 1ch;
+}
+
+details[open] > summary::after {
+  content: '-';
+}
+
+details > summary:hover {
+  background: var(--bg-hover);
+}
+
+details[open] > summary {
+  color: var(--tx-prominent);
+  background: var(--bg-selected);
+}
+
+details ol,
+details ul {
+  border-left: 1px dashed var(--border-item);
+  margin-left: 0.75rem;
+  padding: 0.25rem 0 0.25rem 0.75rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  details::details-content {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s, content-visibility 0.3s;
+    transition-behavior: allow-disrete;
+  }
+
+  details[open]::details-content {
+    height: auto;
+  }
+}
+
+/* Text Input Search */
+input[type="search"] {
+  color: var(--tx-primary);
+  border-color: var(--border-interactive);
+  border-style: solid;
+  border-radius: 25px;
+  background: none;
+  outline: none;
+}
+
+input[type="search"]:focus {
+  border-color: var(--accent);
+}
+
+input[type="search"]::placeholder {
+  color: var(--tx-placeholder);
+}
+
+/* Dropdown select */
+select {
+  color: var(--tx-prominent);
+  background: var(--bg-interactive);
+  border-radius: 0;
+  cursor: pointer;
+}
+
+option {
+  color: var(--tx-primary);
+  background: var(--bg-interactive);
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+option:hover,
+option:focus {
+  background: var(--bg-hover);
+}
+
+option:checked .option-label {
+  font-weight: bold;
+}
+
+option::checkmark {
+  order: 1;
+  margin-left: auto;
+  content: '\2022';
+}
+
+::picker(select) {
+  border-color: var(--border-item);
+}
+
+select:hover,
+select:focus {
+  background: var(--bg-hover);
+}
+
+select:open::picker-icon {
+  rotate: 180deg;
+}
+
+/* Headings */
+.content .content-upper,
+.content-body h1,
+.content-body h2 {
+  border-bottom-color: var(--border-content);
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  color: var(--tx-prominent);
+}
+
+.content h1 a[href^="#"],
+.content h2 a[href^="#"],
+.content h3 a[href^="#"],
+.content h4 a[href^="#"],
+.content h5 a[href^="#"],
+.content h6 a[href^="#"] {
+  color: var(--tx-primary);
+  text-decoration: none;
+}
+
+.content h1 a[href^="#"]:hover,
+.content h2 a[href^="#"]:hover,
+.content h3 a[href^="#"]:hover,
+.content h4 a[href^="#"]:hover,
+.content h5 a[href^="#"]:hover,
+.content h6 a[href^="#"]:hover {
+  text-decoration: underline;
+}
+
+/* Links */
+a {
+  color: var(--tx-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.current {
+  font-weight: bold;
+  pointer-events: none;
+  cursor: default;
+}
+
+.content a:not([class]) {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.content a:not([class]):hover {
+  text-decoration: none;
+}
+
+/* Buttons */
+button, .button {
+  color: var(--tx-prominent);
+  background: var(--bg-interactive);
+  cursor: pointer;
+}
+
+button.frameless, .button.frameless {
+  background: none;
+}
+
+button:hover, .button:hover {
+  background: var(--bg-hover);
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+/* Tables */
+table tr {
+  border-color: var(--border-item);
+}

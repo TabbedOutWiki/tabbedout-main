@@ -10,6 +10,8 @@ An example use would be warning visitors that downloadable content must be purch
 
 This template should be used sparingly, and not simply to highlight information that fits perfectly well within the page.
 
+{{< quote "This particular variant has all the bells and whistles befitting an entire front line unit: folding sight, capacity to split into two parts for easier carrying, and a stock that can be comfortably used by one in every 500 soldiers." "Liberty Launcher publicity blurb" >}}
+
 ## Examples
 
 ### Default

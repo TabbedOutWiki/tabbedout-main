@@ -50,7 +50,7 @@ hugo mod tidy
 hugo mod vendor
 
 # Test the site and audit
-hugo mod server
+hugo server
 ```
 - **Audit**: Run the following to audit the project for errors:
 ```bash

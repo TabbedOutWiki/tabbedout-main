@@ -1,7 +1,3 @@
-# Site name with a trailing slash '/'
-baseURL: 'https://tabbedout.wiki/'
-
-# Supported languages
 languages:
   en:
     languageName: English
@@ -11,15 +7,21 @@ languages:
     title: 'TabbedOut Wiki'
     weight: 1
 
-# Categorization types
 taxonomies:
   category: 'categories'
   tag: 'tags'
 
-# Set and keep true after initial Git commit
+# ========================== DO NOT TOUCH BELOW ==========================
+baseURL: 'https://tabbedout.wiki/'
+repository:
+  branch: main
+  service: GitHub
+  owner: TabbedOutWiki
+  repo: tabbedout-main
+  editPattern: 'https://github.com/TabbedOutWiki/tabbedout-main/edit/main/content/%s'
+  viewPattern: 'https://github.com/TabbedOutWiki/tabbedout-main/blob/main/content/%s'
 enableGitInfo: true
 
-# ========================== DO NOT TOUCH BELOW ==========================
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 pluralizeListTitles: false
@@ -95,4 +97,3 @@ markup:
 module:
   imports:
     path: 'github.com/TabbedOutWiki/quetzal'
-    version: 'main'

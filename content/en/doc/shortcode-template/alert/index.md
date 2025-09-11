@@ -10,30 +10,35 @@ An example use would be warning visitors that downloadable content must be purch
 
 This template should be used sparingly, and not simply to highlight information that fits perfectly well within the page.
 
-## Shortcode use
+## Examples
 
-### Syntax
+### Default
+{{< alert
+	title="Informal message"
+	text="This message should provide important information regarding the article."
+>}}
+
+### Warn
+{{< alert
+	type="warn"
+	title="Warning message"
+	text="This message should provide a necessary warning regarding the article."
+>}}
+
+## Syntax
 
 ```
 {{</* alert
 	type="warn"
 	title="Requires Downloadable Content"
-	text="The content of this article is only accessible to owners of <downloadable content name>."
+	text="The content of this article is only accessible to owners of x downloadable content."
 */>}}
 ```
 
-### Results
-
-{{< alert
-	type="warn"
-	title="Requires Downloadable Content"
-	text="The content of this article is only accessible to owners of <downloadable content name>."
->}}
-
 ## Arguments
 
-| Arguments | Description                                         | Possible values    |
-|-----------|-----------------------------------------------------|--------------------|
-| Type      | The theme of the message being conveyed to visitors | empty/warn/success |
-| Title     | Displayed title                                     |                    |
-| Text      | Displayed text                                      |                    |
+| Arguments | Description                                         | Possible values |
+|-----------|-----------------------------------------------------|-----------------|
+| Type      | The theme of the message being conveyed to visitors | empty/warn      |
+| Title     | Displayed title                                     |                 |
+| Text      | Displayed text                                      |                 |

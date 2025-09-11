@@ -21,13 +21,17 @@ kbd {
   border-radius: var(--border-radius);
 }
 
-/* Quotes */
+/* Quotes - temporarily disabled, experimenting with this look
 blockquote {
   border-left-style: solid;
   border-left-color: var(--border-item);
-}
+} */
 
 blockquote::before {
+  color: var(--tx-subtle);
+}
+
+blockquote::after {
   color: var(--tx-subtle);
 }
 

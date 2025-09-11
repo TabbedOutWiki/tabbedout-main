@@ -115,39 +115,40 @@ kbd {
 }
 
 blockquote {
-  font-family: var(--font-quote);
+  display: inline-grid;
+  grid-template-areas:
+    "mark quote mark2"
+    "blank cite audio"; /* Included "audio" grid area for future use with the audio player */
   margin: 0.5rem 0 0.5rem 1rem;
   padding: 0.5rem;
-  border-left-width: 8px;
+  font-family: var(--font-quote);
 }
 
 blockquote::before {
+  grid-area: mark;
   content: open-quote;
   font-size: var(--fxxxl);
-  line-height: 0.1em;
-  margin-right: 0.5rem;
-  vertical-align: -0.25em;
+  margin-right: 1rem;
+}
+blockquote::after {
+  grid-area: mark2;
+  content: close-quote;
+  font-size: var(--fxxxl);
+  margin-left: 1rem;
 }
 
 blockquote cite {
-  display: block;
+  grid-area: cite;
+  text-align: center;
+  margin-top: -1rem;
 }
 
-/* Fixes quote never closing */
-blockquote::after {
-  content: close-quote;
-  visibility: hidden;
-  position: absolute;
-  width: 0;
-  height: 0;
+blockquote p {
+  grid-area: quote;
 }
 
 blockquote, q {
   quotes: "\201C""\201D""\2018""\2019";
-}
-
-blockquote p {
-  display: inline;
 }
 
 hr {

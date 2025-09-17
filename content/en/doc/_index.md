@@ -1,5 +1,5 @@
 ---
 translationKey: 'documentation'
-title: Documentation
+title: 'Documentation'
 description: 'Find specific information on TabbedOut editing tools'
 ---

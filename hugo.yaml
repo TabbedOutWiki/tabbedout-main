@@ -11,8 +11,13 @@ taxonomies:
   category: 'categories'
   tag: 'tags'
 
-# ========================== DO NOT TOUCH BELOW ==========================
+# ============================= Site specific =============================
 baseURL: 'https://tabbedout.wiki/'
+
+# Documentation site
+docURL: 'https://tabbedout.wiki/'
+
+# Git
 repository:
   branch: main
   service: GitHub
@@ -22,6 +27,7 @@ repository:
   viewPattern: 'https://github.com/TabbedOutWiki/tabbedout-main/blob/main/content/%s'
 enableGitInfo: true
 
+# ========================== DO NOT TOUCH BELOW ==========================
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: true
 pluralizeListTitles: false
@@ -72,6 +78,10 @@ privacy:
 
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+        title: true
     renderer:
       unsafe: false
       xhtml: false

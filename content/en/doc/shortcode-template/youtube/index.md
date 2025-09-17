@@ -2,28 +2,21 @@
 translationKey: 'youtube'
 title: 'Youtube'
 description: 'A shortcode that generates a clickable thumbnail linking to the specified youtube video ID'
-
-infoboxes:
-  - tab: 'Min'
-    title: 'Abysseram'
-    data:
-      - label: 'Power'
-        value: 101
-      - label: 'Element'
-        value: 'Physical'
-      - label: 'Vitality'
-        value: 'C'
-      - label: 'Defense' 
-        value: 'D'
-  - tab: 'Max'
-    title: 'Abysseram'
-    data:
-      - label: 'Power'
-        value: 3228
-      - label: 'Element'
-        value: 'Physical'
-      - label: 'Vitality'
-        value: 'S'
-      - label: 'Defense' 
-        value: 'A'
 ---
+
+{{< shortcode "youtube" >}} generates a clickable thumbnail linking to the specified youtube video. The video must be specified by its id with an optional start time.
+
+If only one portion of the video is relevant to the section content, add an argument specifying the start time (in seconds).
+
+## Example
+
+{{< youtube id="emGri7i8Y2Y" start="87" >}}
+
+## Syntax
+`{{</* youtube id="emGri7i8Y2Y" start="87" */>}}`
+
+## Arguments
+| Arguments | Description                                                     | Required | Example     |
+|-----------|-----------------------------------------------------------------|----------|-------------|
+| id        | The video ID specified in the URL as a string of 11 characters. | Yes      | emGri7i8Y2Y |
+| start     | The desired video start time measured in seconds.               | No       | 87          |

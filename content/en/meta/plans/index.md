@@ -37,7 +37,7 @@ Minor changes are minor in size, not importance. Size matters.
 
 ## General tips
 
-- **Testing the most current Quetzal branch**: `HUGO_MODULE_WORKSPACE=go.work hugo server --ignoreVendorPaths "**"`
+- **Testing the most current Quetzal branch**: `HUGO_MODULE_WORKSPACE=hugo.work hugo server --ignoreVendorPaths "**"`
 - **Updating sites to a new version of Quetzal**: First, delete the `_vendor` directory containing the site's local version of Quetzal, then run the following:
 ```bash
 # Get the latest version (or get a tagged version)
